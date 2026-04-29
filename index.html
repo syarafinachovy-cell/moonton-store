@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AM Top Up Store - Top Up Game & Pulsa Termurah</title>
+    <title>MoontonShop - Top Up Diamond MLBB Murah</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,18 +15,16 @@
         
         :root {
             --primary: #FF5722;
-            --secondary: #00BCD4;
+            --secondary: #2196F3;
             --dark: #1A1A2E;
             --light: #F8F9FA;
             --success: #4CAF50;
             --gold: #FFD700;
             --purple: #9C27B0;
-            --blue: #2196F3;
-            --green: #4CAF50;
         }
         
         body {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
             color: white;
             line-height: 1.6;
             min-height: 100vh;
@@ -40,7 +38,7 @@
         
         /* HEADER */
         header {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -54,11 +52,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            flex-wrap: wrap;
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             color: var(--primary);
             display: flex;
@@ -66,17 +63,13 @@
             gap: 10px;
         }
         
-        .logo span {
-            background: linear-gradient(45deg, #FF5722, #FF8A65);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo i {
+            color: #FFD700;
         }
         
         .nav-links {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 30px;
         }
         
         .nav-links a {
@@ -84,106 +77,121 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
-            padding: 8px 15px;
-            border-radius: 25px;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         
         .nav-links a:hover {
             background: var(--primary);
+            color: white;
         }
         
-        /* HERO */
+        /* HERO SECTION */
         .hero {
-            padding: 120px 0 60px;
+            padding: 150px 0 80px;
             text-align: center;
+            background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 46, 0.85);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #FF5722, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .hero p {
             font-size: 20px;
+            margin-bottom: 30px;
             color: #ddd;
         }
         
-        /* SEARCH BAR */
-        .search-container {
-            max-width: 500px;
-            margin: 30px auto;
-        }
-        
-        .search-box {
+        .features {
             display: flex;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50px;
-            overflow: hidden;
-            border: 1px solid rgba(255,87,34,0.3);
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
         
-        .search-box input {
-            flex: 1;
-            padding: 15px 20px;
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 16px;
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
         }
         
-        .search-box input::placeholder {
-            color: #aaa;
+        .feature i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
-        .search-box button {
-            background: var(--primary);
-            border: none;
-            padding: 0 25px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        /* CATEGORY TABS */
+        /* PRODUCTS SECTION */
         .section-title {
             text-align: center;
-            font-size: 32px;
-            margin: 50px 0 30px;
+            font-size: 36px;
+            margin: 60px 0 40px;
+            color: white;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
         }
         
         .category-tabs {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
         
         .category-tab {
-            background: rgba(255,255,255,0.05);
-            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 30px;
             border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
-            border: 1px solid transparent;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
         
-        .category-tab:hover, .category-tab.active {
+        .category-tab.active {
             background: var(--primary);
             border-color: var(--primary);
         }
         
-        .category-content {
-            display: none;
+        .category-tab:hover {
+            border-color: var(--primary);
         }
         
-        .category-content.active {
-            display: block;
-        }
-        
-        /* PRODUCT GRID */
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -192,46 +200,258 @@
         }
         
         .product-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             padding: 25px;
             text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255,87,34,0.2);
-            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 87, 34, 0.2);
+            position: relative;
+            overflow: hidden;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 87, 34, 0.2);
             border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(255,87,34,0.2);
         }
         
-        .product-icon {
-            font-size: 45px;
+        .product-card.popular::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-card.hot::before {
+            content: 'HOT';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #FF0000;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .diamond-icon {
+            font-size: 50px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .starlight-icon {
+            font-size: 50px;
+            color: var(--purple);
+            margin-bottom: 15px;
+        }
+        
+        .twilight-icon {
+            font-size: 50px;
+            color: #FF9800;
             margin-bottom: 15px;
         }
         
         .product-title {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 22px;
             margin-bottom: 10px;
+            color: white;
         }
         
-        .product-price {
-            font-size: 24px;
+        .price {
+            font-size: 28px;
             color: var(--primary);
             font-weight: bold;
             margin: 15px 0;
         }
         
-        .product-desc {
-            font-size: 12px;
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        
+        .bonus {
+            color: #4CAF50;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        .order-btn {
+            background: linear-gradient(45deg, var(--primary), #FF8A65);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .order-btn:hover {
+            background: linear-gradient(45deg, #FF8A65, var(--primary));
+            transform: scale(1.05);
+        }
+        
+        /* HOW TO ORDER */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .step i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ SECTION */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 87, 34, 0.2);
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            color: white;
+            margin: 0;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s;
+            color: #ddd;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
         }
         
-        /* MODAL PEMBAYARAN */
+        /* MODAL ORDER */
         .modal {
             display: none;
             position: fixed;
@@ -239,7 +459,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -247,37 +467,23 @@
         
         .modal-content {
             background: #1A1A2E;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 15px;
             max-width: 500px;
             width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
             border: 2px solid var(--primary);
             position: relative;
         }
         
-        .modal-header {
-            padding: 20px;
-            border-bottom: 1px solid #333;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .modal-header h2 {
-            color: var(--primary);
-        }
-        
         .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             background: none;
             border: none;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
-        }
-        
-        .modal-body {
-            padding: 20px;
         }
         
         .form-group {
@@ -287,569 +493,758 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #ddd;
+            color: white;
         }
         
         .form-group input, .form-group select {
             width: 100%;
             padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            background: #0f0f1a;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
+            font-size: 16px;
         }
         
-        .payment-methods {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 10px;
-            margin: 15px 0;
-        }
-        
-        .payment-method {
-            background: #0f0f1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 12px;
-            text-align: center;
-            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
             transition: 0.3s;
         }
         
-        .payment-method:hover, .payment-method.selected {
-            border-color: var(--primary);
-            background: rgba(255,87,34,0.2);
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
         }
         
-        .payment-method i {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        .rekening-info {
-            background: #0f0f1a;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 15px;
-            border: 1px solid var(--primary);
-            text-align: center;
-        }
-        
-        .rekening-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFD700;
-            letter-spacing: 2px;
-            margin: 10px 0;
-        }
-        
-        .copy-btn {
-            background: var(--primary);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 25px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .total-price {
-            font-size: 28px;
-            color: var(--primary);
-            font-weight: bold;
-            text-align: center;
-            margin: 15px 0;
-        }
-        
-        .whatsapp-order {
-            background: #25D366;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-        
-        /* STEPS */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .step {
-            background: rgba(255,255,255,0.05);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-weight: bold;
-        }
-        
-        /* FOOTER */
-        footer {
-            background: rgba(0,0,0,0.9);
-            padding: 40px 0 20px;
-            margin-top: 60px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-section h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .social-links a {
-            color: white;
-            background: rgba(255,255,255,0.1);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            color: #888;
-        }
-        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
+            .nav-links {
+                display: none;
             }
+            
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
             .products {
                 grid-template-columns: 1fr;
             }
+            
+            .category-tabs {
+                gap: 10px;
+            }
+            
+            .category-tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .category-content {
+            display: none;
+        }
+        
+        .category-content.active {
+            display: block;
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-store"></i>
-                    <span>AM Top Up Store</span>
+                    <i class="fas fa-gem"></i>
+                    <span>MONTOONSHOP</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#home">Beranda</a>
+                    <a href="#home">Home</a>
                     <a href="#products">Produk</a>
                     <a href="#howto">Cara Order</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#contact">Kontak</a>
                 </div>
             </nav>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Top Up Game, Pulsa, & Listrik</h1>
-            <p>Termurah • Tercepat • Terpercaya • Proses 1-5 Menit</p>
-            
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Cari produk... misal: Diamond ML, Pulsa 10rb">
-                    <button onclick="searchProduct()"><i class="fas fa-search"></i></button>
+            <div class="hero-content fade-in">
+                <h1>TOP UP DIAMOND MLBB</h1>
+                <p>Murah • Cepat • Aman • Proses 1-5 Menit</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h3>PROSES CEPAT</h3>
+                        <p>1-5 Menit setelah pembayaran</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100% AMAN</h3>
+                        <p>Garansi sampai diamond masuk</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 SUPPORT</h3>
+                        <p>CS siap membantu kapan saja</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PRODUCTS SECTION -->
     <section id="products" class="container">
-        <h2 class="section-title">PRODUK KAMI</h2>
+        <h2 class="section-title">PAKET DIAMOND & MEMBERSHIP</h2>
         
+        <!-- CATEGORY TABS -->
         <div class="category-tabs">
-            <div class="category-tab active" data-cat="all">SEMUA</div>
-            <div class="category-tab" data-cat="ml">🎮 ML DIAMOND</div>
-            <div class="category-tab" data-cat="ff">🔫 FF DIAMOND</div>
-            <div class="category-tab" data-cat="pubg">🎯 PUBG UC</div>
-            <div class="category-tab" data-cat="pulsa">📱 PULSA</div>
-            <div class="category-tab" data-cat="data">🌐 PAKET DATA</div>
-            <div class="category-tab" data-cat="listrik">💡 LISTRIK PLN</div>
+            <div class="category-tab active" onclick="showCategory('diamond')">💎 DIAMOND</div>
+            <div class="category-tab" onclick="showCategory('membership')">👑 MEMBERSHIP</div>
         </div>
 
-        <div id="products-container">
-            <div class="products" id="productList"></div>
-        </div>
-    </section>
+        <!-- DIAMOND PRODUCTS -->
+        <div id="diamond-category" class="category-content active">
+            <div class="products">
+                <!-- 15 PAKET DIAMOND DENGAN HARGA REALISTIS -->
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">5 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 1.500</span>
+                        <span>Rp 1.200</span>
+                    </div>
+                    <p class="bonus">Bonus: 1 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('5 Diamond', 1200)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
 
-    <section id="howto" class="container">
-        <h2 class="section-title">CARA ORDER</h2>
-        <div class="steps">
-            <div class="step"><div class="step-number">1</div><i class="fas fa-gamepad"></i><h3>Pilih Produk</h3><p>Pilih game atau layanan yang diinginkan</p></div>
-            <div class="step"><div class="step-number">2</div><i class="fas fa-credit-card"></i><h3>Pilih Pembayaran</h3><p>Pilih metode pembayaran favorit</p></div>
-            <div class="step"><div class="step-number">3</div><i class="fas fa-university"></i><h3>Transfer</h3><p>Transfer ke rekening yang tampil</p></div>
-            <div class="step"><div class="step-number">4</div><i class="fas fa-paper-plane"></i><h3>Kirim Bukti</h3><p>Kirim bukti & ID ke WhatsApp</p></div>
-        </div>
-    </section>
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">11 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 3.000</span>
+                        <span>Rp 2.500</span>
+                    </div>
+                    <p class="bonus">Bonus: 2 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('11 Diamond', 2500)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
 
-    <section id="contact" class="container">
-        <div class="faq-container">
-            <h2 class="section-title">HUBUNGI KAMI</h2>
-            <div style="text-align: center; padding: 20px;">
-                <p style="margin-bottom: 20px;">Ada pertanyaan? Langsung chat kami!</p>
-                <a href="https://wa.me/62882006428491" target="_blank" style="background: #25D366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: inline-block;">
-                    <i class="fab fa-whatsapp"></i> Chat via WhatsApp
-                </a>
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">17 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 5.000</span>
+                        <span>Rp 4.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 3 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('17 Diamond', 4000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">25 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 7.500</span>
+                        <span>Rp 6.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 4 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('25 Diamond', 6000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in popular">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">42 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 12.500</span>
+                        <span>Rp 10.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 5 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('42 Diamond', 10000)">
+                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">57 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 17.500</span>
+                        <span>Rp 14.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 7 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('57 Diamond', 14000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in hot">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">77 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 23.000</span>
+                        <span>Rp 19.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 10 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('77 Diamond', 19000)">
+                        <i class="fab fa-whatsapp"></i> ORDER HOT
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">100 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 29.000</span>
+                        <span>Rp 24.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 12 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('100 Diamond', 24000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">210 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 58.000</span>
+                        <span>Rp 48.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 25 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('210 Diamond', 48000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in popular">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">285 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 78.000</span>
+                        <span>Rp 65.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 35 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('285 Diamond', 65000)">
+                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">370 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 98.000</span>
+                        <span>Rp 82.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 45 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('370 Diamond', 82000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">500 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 145.000</span>
+                        <span>Rp 125.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 60 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('500 Diamond', 125000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in hot">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">720 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 198.000</span>
+                        <span>Rp 168.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 80 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('720 Diamond', 168000)">
+                        <i class="fab fa-whatsapp"></i> ORDER HOT
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">1000 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 290.000</span>
+                        <span>Rp 245.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 120 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('1000 Diamond', 245000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="product-title">2010 DIAMOND</h3>
+                    <div class="price">
+                        <span class="original-price">Rp 580.000</span>
+                        <span>Rp 490.000</span>
+                    </div>
+                    <p class="bonus">Bonus: 250 Diamond</p>
+                    <button class="order-btn" onclick="openOrderModal('2010 Diamond', 490000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MEMBERSHIP PRODUCTS -->
+        <div id="membership-category" class="category-content">
+            <div class="products">
+                <!-- STARLIGHT -->
+                <div class="product-card fade-in">
+                    <div class="starlight-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="product-title">STARLIGHT</h3>
+                    <div class="price">
+                        <span>Rp 48.000</span>
+                    </div>
+                    <p class="bonus">+ 300 Diamond + Skin Starlight</p>
+                    <button class="order-btn" onclick="openOrderModal('Starlight', 48000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in popular">
+                    <div class="starlight-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="product-title">STARLIGHT PLUS</h3>
+                    <div class="price">
+                        <span>Rp 68.000</span>
+                    </div>
+                    <p class="bonus">+ 500 Diamond + Skin Starlight Plus</p>
+                    <button class="order-btn" onclick="openOrderModal('Starlight Plus', 68000)">
+                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
+                    </button>
+                </div>
+
+                <!-- TWILIGHT PASS -->
+                <div class="product-card fade-in">
+                    <div class="twilight-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="product-title">TWILIGHT PASS</h3>
+                    <div class="price">
+                        <span>Rp 65.000</span>
+                    </div>
+                    <p class="bonus">+ 500 Diamond + Skin Twilight</p>
+                    <button class="order-btn" onclick="openOrderModal('Twilight Pass', 65000)">
+                        <i class="fab fa-whatsapp"></i> ORDER
+                    </button>
+                </div>
+
+                <div class="product-card fade-in hot">
+                    <div class="twilight-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="product-title">TWILIGHT PASS PLUS</h3>
+                    <div class="price">
+                        <span>Rp 85.000</span>
+                    </div>
+                    <p class="bonus">+ 700 Diamond + Skin Twilight Elite</p>
+                    <button class="order-btn" onclick="openOrderModal('Twilight Pass Plus', 85000)">
+                        <i class="fab fa-whatsapp"></i> ORDER HOT
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- HOW TO ORDER -->
+    <section id="howto" class="container">
+        <h2 class="section-title">CARA ORDER MUDAH</h2>
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <i class="fas fa-shopping-cart"></i>
+                <h3>PILIH DIAMOND</h3>
+                <p>Pilih paket diamond yang diinginkan</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <i class="fas fa-credit-card"></i>
+                <h3>BAYAR</h3>
+                <p>Transfer ke rekening yang tersedia</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <i class="fas fa-id-card"></i>
+                <h3>KIRIM DATA</h3>
+                <p>Kirim ID ML & bukti TF via WhatsApp</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">4</div>
+                <i class="fas fa-check-circle"></i>
+                <h3>DIAMOND MASUK</h3>
+                <p>Diamond masuk dalam 1-5 menit</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="container">
+        <h2 class="section-title">PERTANYAAN UMUM</h2>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Berapa lama proses top up?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Proses 1-5 menit setelah pembayaran dikonfirmasi. Maksimal 15 menit jika banyak order.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Apakah aman?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>100% aman. Kami menggunakan metode resmi. Garansi uang kembali jika diamond tidak masuk.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Metode pembayaran apa saja?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>BCA, BRI, BNI, Mandiri, DANA, OVO, GoPay, ShopeePay, QRIS, Alfamart, Indomaret.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Buka jam berapa?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Buka 24 jam / 7 hari. Customer service siap membantu kapan saja.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Bagaimana cara order?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>1. Pilih diamond 2. Klik ORDER 3. Isi ID ML 4. Bayar 5. Kirim bukti TF via WhatsApp 6. Diamond masuk</p>
+                </div>
+            </div>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Diamond tidak masuk, bagaimana?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Segera hubungi CS via WhatsApp. Kami akan proses refund atau kirim ulang dalam 30 menit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>AM Top Up Store</h3>
-                    <p>Top Up game, pulsa, dan listrik termurah se-Indonesia. Proses cepat & aman.</p>
+                    <h3>MONTOONSHOP</h3>
+                    <p>Top Up Diamond Mobile Legends termurah dan tercepat. Proses 1-5 menit setelah pembayaran. Garansi 100% aman.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>KONTAK</h3>
-                    <p><i class="fab fa-whatsapp"></i> +62 882-0064-28491</p>
-                    <p><i class="fas fa-envelope"></i> amtopupstore@gmail.com</p>
-                    <p><i class="fas fa-clock"></i> Buka 24/7</p>
+                    <h3>KONTAK KAMI</h3>
+                    <div class="contact-info">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+62 882-0064-28491</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>cs@montoonshop.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Buka 24 Jam / 7 Hari</span>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h3>METODE BAYAR</h3>
-                    <p>BCA • BRI • BNI • Mandiri • DANA • OVO • GoPay • QRIS</p>
+                    <h3>METODE PEMBAYARAN</h3>
+                    <p>BCA • BRI • BNI • Mandiri • DANA • OVO • GoPay • ShopeePay • QRIS • Alfamart • Indomaret</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 AM Top Up Store. All rights reserved.</p>
+                <p>&copy; 2024 MONTOONSHOP. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL ORDER -->
+    <!-- ORDER MODAL -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-shopping-cart"></i> Detail Pesanan</h2>
-                <button class="close-modal" onclick="closeOrderModal()">&times;</button>
+            <button class="close-modal" onclick="closeOrderModal()">&times;</button>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">ORDER DIAMOND</h2>
+            
+            <div class="form-group">
+                <label>Paket Diamond:</label>
+                <input type="text" id="modalProduct" readonly>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Produk</label>
-                    <input type="text" id="modalProduct" readonly style="background: #2a2a4a;">
-                </div>
-                <div class="form-group">
-                    <label>Harga</label>
-                    <input type="text" id="modalPrice" readonly style="background: #2a2a4a;">
-                </div>
-                
-                <div id="gameFields" style="display: none;">
-                    <div class="form-group">
-                        <label>ID User / Player ID</label>
-                        <input type="text" id="userId" placeholder="Contoh: 123456789">
-                    </div>
-                    <div class="form-group">
-                        <label>Nomor Server (Opsional)</label>
-                        <input type="text" id="serverId" placeholder="Contoh: 1122">
-                    </div>
-                </div>
-                
-                <div id="pulsaFields" style="display: none;">
-                    <div class="form-group">
-                        <label>Nomor HP Tujuan</label>
-                        <input type="tel" id="phoneNumber" placeholder="Contoh: 08123456789">
-                    </div>
-                </div>
-
-                <div id="listrikFields" style="display: none;">
-                    <div class="form-group">
-                        <label>ID Pelanggan / Nomor Meter</label>
-                        <input type="text" id="meterNumber" placeholder="Contoh: 1234567890123">
-                    </div>
-                </div>
-
-                <label>Metode Pembayaran</label>
-                <div class="payment-methods" id="paymentMethods">
-                    <div class="payment-method" data-bank="BCA" data-number="882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-university"></i>
-                        <div>BCA</div>
-                        <div style="font-size: 11px;">a/n AM TOP UP</div>
-                    </div>
-                    <div class="payment-method" data-bank="BRI" data-number="882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-university"></i>
-                        <div>BRI</div>
-                        <div style="font-size: 11px;">a/n AM TOP UP</div>
-                    </div>
-                    <div class="payment-method" data-bank="MANDIRI" data-number="882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-university"></i>
-                        <div>Mandiri</div>
-                        <div style="font-size: 11px;">a/n AM TOP UP</div>
-                    </div>
-                    <div class="payment-method" data-bank="DANA" data-number="0882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-wallet"></i>
-                        <div>DANA</div>
-                    </div>
-                    <div class="payment-method" data-bank="OVO" data-number="0882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-wallet"></i>
-                        <div>OVO</div>
-                    </div>
-                    <div class="payment-method" data-bank="GOPAY" data-number="0882006428491" data-name="AM TOP UP">
-                        <i class="fas fa-wallet"></i>
-                        <div>GoPay</div>
-                    </div>
-                    <div class="payment-method" data-bank="QRIS" data-number="https://qr.is/amtopup" data-name="AM TOP UP">
-                        <i class="fas fa-qrcode"></i>
-                        <div>QRIS</div>
-                    </div>
-                </div>
-
-                <div id="rekeningInfo" style="display: none;">
-                    <div class="rekening-info">
-                        <i class="fas fa-university" style="font-size: 30px;"></i>
-                        <div id="bankName" style="font-weight: bold; margin-top: 5px;">BCA</div>
-                        <div class="rekening-number" id="rekNumber">882006428491</div>
-                        <div id="rekName">a/n AM TOP UP</div>
-                        <button class="copy-btn" onclick="copyRekening()"><i class="fas fa-copy"></i> Copy No. Rekening</button>
-                    </div>
-                </div>
-
-                <div class="total-price" id="totalPrice"></div>
-
-                <button class="whatsapp-order" id="whatsappBtn">
-                    <i class="fab fa-whatsapp"></i> Kirim Pesanan ke WhatsApp
-                </button>
+            
+            <div class="form-group">
+                <label>Harga:</label>
+                <input type="text" id="modalPrice" readonly>
             </div>
+            
+            <div class="form-group">
+                <label for="playerId">ID Mobile Legends:</label>
+                <input type="text" id="playerId" placeholder="Contoh: 123456789" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="paymentMethod">Metode Pembayaran:</label>
+                <select id="paymentMethod">
+                    <option value="BCA">BCA</option>
+                    <option value="BRI">BRI</option>
+                    <option value="BNI">BNI</option>
+                    <option value="Mandiri">Mandiri</option>
+                    <option value="DANA">DANA</option>
+                    <option value="OVO">OVO</option>
+                    <option value="GoPay">GoPay</option>
+                    <option value="QRIS">QRIS</option>
+                </select>
+            </div>
+            
+            <a id="whatsappLink" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> KIRIM VIA WHATSAPP
+            </a>
+            
+            <p style="margin-top: 15px; font-size: 14px; color: #aaa;">
+                <i class="fas fa-info-circle"></i> Diamond akan masuk dalam 1-5 menit setelah pembayaran
+            </p>
+            <p style="margin-top: 10px; font-size: 12px; color: #FFD700;">
+                <i class="fas fa-exclamation-circle"></i> Jangan lupa kirim bukti transfer di WhatsApp!
+            </p>
         </div>
     </div>
 
     <script>
-        // DATA PRODUK (Bisa ditambah sesuai kebutuhan)
-        const products = [
-            // ML DIAMOND
-            { id: 1, name: "5 Diamond ML", category: "ml", price: 1200, type: "game", game: "ml", desc: "Bonus 1 Diamond" },
-            { id: 2, name: "11 Diamond ML", category: "ml", price: 2500, type: "game", game: "ml", desc: "Bonus 2 Diamond" },
-            { id: 3, name: "42 Diamond ML", category: "ml", price: 10000, type: "game", game: "ml", desc: "Bonus 5 Diamond", popular: true },
-            { id: 4, name: "77 Diamond ML", category: "ml", price: 19000, type: "game", game: "ml", desc: "Bonus 10 Diamond", hot: true },
-            { id: 5, name: "100 Diamond ML", category: "ml", price: 24000, type: "game", game: "ml", desc: "Bonus 12 Diamond" },
-            { id: 6, name: "285 Diamond ML", category: "ml", price: 65000, type: "game", game: "ml", desc: "Bonus 35 Diamond", popular: true },
-            { id: 7, name: "500 Diamond ML", category: "ml", price: 125000, type: "game", game: "ml", desc: "Bonus 60 Diamond" },
-            { id: 8, name: "720 Diamond ML", category: "ml", price: 168000, type: "game", game: "ml", desc: "Bonus 80 Diamond" },
+        // WhatsApp Configuration
+        const whatsappNumber = "62882006428491"; // NOMOR SUDAH DIGANTI
+        
+        // Modal Functions
+        function openOrderModal(product, price) {
+            const modal = document.getElementById('orderModal');
+            const modalProduct = document.getElementById('modalProduct');
+            const modalPrice = document.getElementById('modalPrice');
             
-            // FF DIAMOND
-            { id: 9, name: "5 Diamond FF", category: "ff", price: 1300, type: "game", game: "ff", desc: "Bonus 1 Diamond" },
-            { id: 10, name: "25 Diamond FF", category: "ff", price: 6000, type: "game", game: "ff", desc: "Bonus 3 Diamond" },
-            { id: 11, name: "50 Diamond FF", category: "ff", price: 12000, type: "game", game: "ff", desc: "Bonus 6 Diamond", popular: true },
-            { id: 12, name: "100 Diamond FF", category: "ff", price: 24000, type: "game", game: "ff", desc: "Bonus 12 Diamond" },
-            { id: 13, name: "200 Diamond FF", category: "ff", price: 47000, type: "game", game: "ff", desc: "Bonus 25 Diamond" },
-            { id: 14, name: "500 Diamond FF", category: "ff", price: 115000, type: "game", game: "ff", desc: "Bonus 60 Diamond" },
+            modalProduct.value = product;
+            modalPrice.value = 'Rp ' + price.toLocaleString('id-ID');
             
-            // PUBG UC
-            { id: 15, name: "50 UC PUBG", category: "pubg", price: 12000, type: "game", game: "pubg", desc: "Top Up UC" },
-            { id: 16, name: "125 UC PUBG", category: "pubg", price: 29000, type: "game", game: "pubg", desc: "Top Up UC", popular: true },
-            { id: 17, name: "325 UC PUBG", category: "pubg", price: 75000, type: "game", game: "pubg", desc: "Top Up UC" },
-            { id: 18, name: "660 UC PUBG", category: "pubg", price: 150000, type: "game", game: "pubg", desc: "Top Up UC" },
-            
-            // PULSA
-            { id: 19, name: "Pulsa 5.000", category: "pulsa", price: 5500, type: "pulsa", desc: "Semua Operator" },
-            { id: 20, name: "Pulsa 10.000", category: "pulsa", price: 10500, type: "pulsa", desc: "Semua Operator" },
-            { id: 21, name: "Pulsa 20.000", category: "pulsa", price: 20500, type: "pulsa", desc: "Semua Operator", popular: true },
-            { id: 22, name: "Pulsa 50.000", category: "pulsa", price: 50500, type: "pulsa", desc: "Semua Operator" },
-            { id: 23, name: "Pulsa 100.000", category: "pulsa", price: 100500, type: "pulsa", desc: "Semua Operator" },
-            
-            // PAKET DATA
-            { id: 24, name: "Internet 1GB", category: "data", price: 12000, type: "data", operator: "Semua", desc: "Kuota 1GB" },
-            { id: 25, name: "Internet 2GB", category: "data", price: 22000, type: "data", operator: "Semua", desc: "Kuota 2GB", popular: true },
-            { id: 26, name: "Internet 5GB", category: "data", price: 52000, type: "data", operator: "Semua", desc: "Kuota 5GB" },
-            { id: 27, name: "Internet 10GB", category: "data", price: 100000, type: "data", operator: "Semua", desc: "Kuota 10GB" },
-            
-            // LISTRIK PLN
-            { id: 28, name: "Listrik 20.000", category: "listrik", price: 20500, type: "listrik", desc: "Token PLN" },
-            { id: 29, name: "Listrik 50.000", category: "listrik", price: 50500, type: "listrik", desc: "Token PLN", popular: true },
-            { id: 30, name: "Listrik 100.000", category: "listrik", price: 100500, type: "listrik", desc: "Token PLN" },
-            { id: 31, name: "Listrik 200.000", category: "listrik", price: 200500, type: "listrik", desc: "Token PLN" },
-        ];
-
-        let currentProduct = null;
-        let selectedPayment = null;
-
-        // Tampilkan produk
-        function displayProducts(filterCategory = "all", searchTerm = "") {
-            const productList = document.getElementById("productList");
-            productList.innerHTML = "";
-            
-            let filtered = products;
-            if (filterCategory !== "all") {
-                filtered = filtered.filter(p => p.category === filterCategory);
-            }
-            if (searchTerm) {
-                filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
-            }
-            
-            filtered.forEach(p => {
-                const card = document.createElement("div");
-                card.className = "product-card";
-                if (p.popular) card.classList.add("popular");
-                if (p.hot) card.classList.add("hot");
-                
-                let icon = "";
-                if (p.category === "ml") icon = "🎮";
-                else if (p.category === "ff") icon = "🔫";
-                else if (p.category === "pubg") icon = "🎯";
-                else if (p.category === "pulsa") icon = "📱";
-                else if (p.category === "data") icon = "🌐";
-                else if (p.category === "listrik") icon = "💡";
-                
-                card.innerHTML = `
-                    <div class="product-icon">${icon}</div>
-                    <div class="product-title">${p.name}</div>
-                    <div class="product-price">Rp ${p.price.toLocaleString('id-ID')}</div>
-                    <div class="product-desc">${p.desc}</div>
-                `;
-                card.onclick = () => openOrderModal(p);
-                productList.appendChild(card);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeOrderModal() {
+            const modal = document.getElementById('orderModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Category Tabs Function
+        function showCategory(category) {
+            // Update active tab
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
             });
+            event.target.classList.add('active');
+            
+            // Show selected category
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(category + '-category').classList.add('active');
         }
-
-        // Buka modal order
-        function openOrderModal(product) {
-            currentProduct = product;
-            selectedPayment = null;
+        
+        // Update WhatsApp link dynamically (TANPA EMOJI)
+        function updateWhatsAppLink() {
+            const product = document.getElementById('modalProduct').value;
+            const price = document.getElementById('modalPrice').value;
+            const playerId = document.getElementById('playerId').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
             
-            document.getElementById("modalProduct").value = product.name;
-            document.getElementById("modalPrice").value = "Rp " + product.price.toLocaleString('id-ID');
-            document.getElementById("totalPrice").innerHTML = `Total: Rp ${product.price.toLocaleString('id-ID')}`;
+            // TANPA EMOJI, TANPA SERVER, ADA MINTA BUKTI TF
+            const message = `Halo admin, saya mau order diamond MLBB\n\n` +
+                           `Produk: ${product}\n` +
+                           `Harga: ${price}\n` +
+                           `ID ML: ${playerId}\n` +
+                           `Bayar via: ${paymentMethod}\n\n` +
+                           `SUDAH TRANSFER, mohon segera diproses.\n` +
+                           `Bukti TF akan saya kirim di chat ini.`;
             
-            // Sembunyikan semua field
-            document.getElementById("gameFields").style.display = "none";
-            document.getElementById("pulsaFields").style.display = "none";
-            document.getElementById("listrikFields").style.display = "none";
-            
-            // Tampilkan field sesuai tipe
-            if (product.type === "game") {
-                document.getElementById("gameFields").style.display = "block";
-            } else if (product.type === "pulsa" || product.category === "pulsa") {
-                document.getElementById("pulsaFields").style.display = "block";
-            } else if (product.category === "listrik") {
-                document.getElementById("listrikFields").style.display = "block";
-            } else if (product.category === "data") {
-                document.getElementById("pulsaFields").style.display = "block";
+            const whatsappLink = document.getElementById('whatsappLink');
+            whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        }
+        
+        // Add event listeners to form inputs
+        document.getElementById('playerId').addEventListener('input', updateWhatsAppLink);
+        document.getElementById('paymentMethod').addEventListener('change', updateWhatsAppLink);
+        
+        // Initial update
+        updateWhatsAppLink();
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target === modal) {
+                closeOrderModal();
             }
-            
-            document.getElementById("rekeningInfo").style.display = "none";
-            
-            document.querySelectorAll(".payment-method").forEach(m => m.classList.remove("selected"));
-            document.getElementById("orderModal").style.display = "flex";
         }
-
-        // Pilih metode pembayaran
-        document.querySelectorAll(".payment-method").forEach(method => {
-            method.addEventListener("click", function() {
-                document.querySelectorAll(".payment-method").forEach(m => m.classList.remove("selected"));
-                this.classList.add("selected");
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
                 
-                selectedPayment = {
-                    bank: this.dataset.bank,
-                    number: this.dataset.number,
-                    name: this.dataset.name
-                };
-                
-                document.getElementById("bankName").innerText = this.dataset.bank;
-                document.getElementById("rekNumber").innerText = this.dataset.number;
-                document.getElementById("rekName").innerHTML = this.dataset.name ? `a/n ${this.dataset.name}` : "";
-                document.getElementById("rekeningInfo").style.display = "block";
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-
-        // Copy rekening
-        function copyRekening() {
-            const rekNumber = document.getElementById("rekNumber").innerText;
-            navigator.clipboard.writeText(rekNumber);
-            alert("Nomor rekening telah disalin!");
-        }
-
-        // Kirim ke WhatsApp
-        document.getElementById("whatsappBtn").addEventListener("click", function() {
-            if (!selectedPayment) {
-                alert("Pilih metode pembayaran terlebih dahulu!");
-                return;
-            }
-            
-            let message = "🛒 *ORDER BARU - AM TOP UP STORE* 🛒\n\n";
-            message += `📦 *Produk:* ${currentProduct.name}\n`;
-            message += `💰 *Harga:* Rp ${currentProduct.price.toLocaleString('id-ID')}\n`;
-            
-            if (currentProduct.type === "game") {
-                const userId = document.getElementById("userId").value;
-                const serverId = document.getElementById("serverId").value;
-                if (!userId) {
-                    alert("Masukkan ID User / Player ID!");
-                    return;
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
                 }
-                message += `🎮 *ID User:* ${userId}\n`;
-                if (serverId) message += `🖥️ *Server:* ${serverId}\n`;
-            }
-            
-            if (currentProduct.type === "pulsa" || currentProduct.category === "pulsa") {
-                const phone = document.getElementById("phoneNumber").value;
-                if (!phone) {
-                    alert("Masukkan nomor HP tujuan!");
-                    return;
-                }
-                message += `📱 *Nomor Tujuan:* ${phone}\n`;
-            }
-            
-            if (currentProduct.category === "data") {
-                const phone = document.getElementById("phoneNumber").value;
-                if (!phone) {
-                    alert("Masukkan nomor HP tujuan!");
-                    return;
-                }
-                message += `🌐 *Nomor Tujuan:* ${phone}\n`;
-            }
-            
-            if (currentProduct.category === "listrik") {
-                const meterNumber = document.getElementById("meterNumber").value;
-                if (!meterNumber) {
-                    alert("Masukkan ID Pelanggan / Nomor Meter!");
-                    return;
-                }
-                message += `💡 *ID Pelanggan:* ${meterNumber}\n`;
-            }
-            
-            message += `\n💳 *Pembayaran:* ${selectedPayment.bank}\n`;
-            message += `🏦 *Nomor Rekening:* ${selectedPayment.number}\n`;
-            message += `👤 *Atas Nama:* ${selectedPayment.name}\n`;
-            message += `\n📝 *Status:* SUDAH TRANSFER\n`;
-            message += `\n📸 *Bukti Transfer:* (lampir
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        document.querySelectorAll('.product-card, .step, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Simple visitor counter
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        
+        console.log(`Website telah dikunjungi ${visitorCount} kali`);
+    </script>
+</body>
+</html>

@@ -36,7 +36,6 @@
             padding: 0 20px;
         }
         
-        /* HEADER */
         header {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -52,24 +51,29 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            flex-wrap: wrap;
         }
         
         .logo {
             font-size: 28px;
             font-weight: bold;
-            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
         .logo i {
-            color: #FFD700;
+            color: var(--gold);
+        }
+        
+        .logo span {
+            color: var(--primary);
         }
         
         .nav-links {
             display: flex;
             gap: 30px;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
@@ -83,10 +87,8 @@
         
         .nav-links a:hover {
             background: var(--primary);
-            color: white;
         }
         
-        /* HERO SECTION */
         .hero {
             padding: 150px 0 80px;
             text-align: center;
@@ -115,7 +117,6 @@
             font-size: 48px;
             margin-bottom: 20px;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .hero p {
@@ -146,7 +147,6 @@
             margin-bottom: 15px;
         }
         
-        /* PRODUCTS SECTION */
         .section-title {
             text-align: center;
             font-size: 36px;
@@ -303,10 +303,9 @@
         
         .order-btn:hover {
             background: linear-gradient(45deg, #FF8A65, var(--primary));
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         
-        /* HOW TO ORDER */
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -344,7 +343,6 @@
             margin-bottom: 20px;
         }
         
-        /* FAQ SECTION */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -394,7 +392,6 @@
             transform: rotate(180deg);
         }
         
-        /* FOOTER */
         footer {
             background: rgba(0, 0, 0, 0.9);
             padding: 50px 0 20px;
@@ -451,7 +448,6 @@
             color: #aaa;
         }
         
-        /* MODAL ORDER */
         .modal {
             display: none;
             position: fixed;
@@ -459,7 +455,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -467,10 +463,12 @@
         
         .modal-content {
             background: #1A1A2E;
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
             max-width: 500px;
             width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
             border: 2px solid var(--primary);
             position: relative;
         }
@@ -496,7 +494,7 @@
             color: white;
         }
         
-        .form-group input, .form-group select {
+        .form-group input {
             width: 100%;
             padding: 12px;
             border-radius: 8px;
@@ -504,6 +502,60 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 16px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .payment-method {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .payment-method:hover, .payment-method.selected {
+            border-color: var(--primary);
+            background: rgba(255, 87, 34, 0.2);
+        }
+        
+        .payment-method i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .rekening-info {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid var(--primary);
+            text-align: center;
+        }
+        
+        .rekening-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
         }
         
         .whatsapp-btn {
@@ -517,63 +569,14 @@
             gap: 10px;
             font-size: 18px;
             font-weight: bold;
-            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            width: 100%;
             margin-top: 20px;
-            transition: 0.3s;
         }
         
         .whatsapp-btn:hover {
             background: #128C7E;
-            transform: scale(1.05);
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .products {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-tabs {
-                gap: 10px;
-            }
-            
-            .category-tab {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-        
-        /* ANIMATIONS */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         
         .category-content {
@@ -583,16 +586,39 @@
         .category-content.active {
             display: block;
         }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
                     <i class="fas fa-gem"></i>
-                    <span>MONTOONSHOP</span>
+                    <span>MOONTONSHOP</span>
                 </div>
                 <div class="nav-links">
                     <a href="#home">Home</a>
@@ -605,646 +631,272 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content fade-in">
                 <h1>TOP UP DIAMOND MLBB</h1>
                 <p>Murah • Cepat • Aman • Proses 1-5 Menit</p>
                 <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-bolt"></i>
-                        <h3>PROSES CEPAT</h3>
-                        <p>1-5 Menit setelah pembayaran</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>100% AMAN</h3>
-                        <p>Garansi sampai diamond masuk</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-headset"></i>
-                        <h3>24/7 SUPPORT</h3>
-                        <p>CS siap membantu kapan saja</p>
-                    </div>
+                    <div class="feature"><i class="fas fa-bolt"></i><h3>PROSES CEPAT</h3><p>1-5 Menit setelah pembayaran</p></div>
+                    <div class="feature"><i class="fas fa-shield-alt"></i><h3>100% AMAN</h3><p>Garansi sampai diamond masuk</p></div>
+                    <div class="feature"><i class="fas fa-headset"></i><h3>24/7 SUPPORT</h3><p>CS siap membantu kapan saja</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS SECTION -->
     <section id="products" class="container">
         <h2 class="section-title">PAKET DIAMOND & MEMBERSHIP</h2>
         
-        <!-- CATEGORY TABS -->
         <div class="category-tabs">
             <div class="category-tab active" onclick="showCategory('diamond')">💎 DIAMOND</div>
             <div class="category-tab" onclick="showCategory('membership')">👑 MEMBERSHIP</div>
         </div>
 
-        <!-- DIAMOND PRODUCTS -->
         <div id="diamond-category" class="category-content active">
             <div class="products">
-                <!-- 15 PAKET DIAMOND DENGAN HARGA REALISTIS -->
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">5 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 1.500</span>
-                        <span>Rp 1.200</span>
-                    </div>
-                    <p class="bonus">Bonus: 1 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('5 Diamond', 1200)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">11 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 3.000</span>
-                        <span>Rp 2.500</span>
-                    </div>
-                    <p class="bonus">Bonus: 2 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('11 Diamond', 2500)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">17 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 5.000</span>
-                        <span>Rp 4.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 3 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('17 Diamond', 4000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">25 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 7.500</span>
-                        <span>Rp 6.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 4 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('25 Diamond', 6000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in popular">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">42 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 12.500</span>
-                        <span>Rp 10.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 5 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('42 Diamond', 10000)">
-                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">57 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 17.500</span>
-                        <span>Rp 14.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 7 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('57 Diamond', 14000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in hot">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">77 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 23.000</span>
-                        <span>Rp 19.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 10 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('77 Diamond', 19000)">
-                        <i class="fab fa-whatsapp"></i> ORDER HOT
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">100 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 29.000</span>
-                        <span>Rp 24.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 12 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('100 Diamond', 24000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">210 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 58.000</span>
-                        <span>Rp 48.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 25 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('210 Diamond', 48000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in popular">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">285 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 78.000</span>
-                        <span>Rp 65.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 35 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('285 Diamond', 65000)">
-                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">370 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 98.000</span>
-                        <span>Rp 82.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 45 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('370 Diamond', 82000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">500 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 145.000</span>
-                        <span>Rp 125.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 60 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('500 Diamond', 125000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in hot">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">720 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 198.000</span>
-                        <span>Rp 168.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 80 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('720 Diamond', 168000)">
-                        <i class="fab fa-whatsapp"></i> ORDER HOT
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">1000 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 290.000</span>
-                        <span>Rp 245.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 120 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('1000 Diamond', 245000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in">
-                    <div class="diamond-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="product-title">2010 DIAMOND</h3>
-                    <div class="price">
-                        <span class="original-price">Rp 580.000</span>
-                        <span>Rp 490.000</span>
-                    </div>
-                    <p class="bonus">Bonus: 250 Diamond</p>
-                    <button class="order-btn" onclick="openOrderModal('2010 Diamond', 490000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">5 DIAMOND</h3><div class="price"><span class="original-price">Rp 1.500</span><span>Rp 1.200</span></div><p class="bonus">Bonus: 1 Diamond</p><button class="order-btn" onclick="openOrderModal('5 Diamond', 1200)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">11 DIAMOND</h3><div class="price"><span class="original-price">Rp 3.000</span><span>Rp 2.500</span></div><p class="bonus">Bonus: 2 Diamond</p><button class="order-btn" onclick="openOrderModal('11 Diamond', 2500)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">17 DIAMOND</h3><div class="price"><span class="original-price">Rp 5.000</span><span>Rp 4.000</span></div><p class="bonus">Bonus: 3 Diamond</p><button class="order-btn" onclick="openOrderModal('17 Diamond', 4000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">25 DIAMOND</h3><div class="price"><span class="original-price">Rp 7.500</span><span>Rp 6.000</span></div><p class="bonus">Bonus: 4 Diamond</p><button class="order-btn" onclick="openOrderModal('25 Diamond', 6000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in popular"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">42 DIAMOND</h3><div class="price"><span class="original-price">Rp 12.500</span><span>Rp 10.000</span></div><p class="bonus">Bonus: 5 Diamond</p><button class="order-btn" onclick="openOrderModal('42 Diamond', 10000)"><i class="fab fa-whatsapp"></i> ORDER POPULAR</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">57 DIAMOND</h3><div class="price"><span class="original-price">Rp 17.500</span><span>Rp 14.000</span></div><p class="bonus">Bonus: 7 Diamond</p><button class="order-btn" onclick="openOrderModal('57 Diamond', 14000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in hot"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">77 DIAMOND</h3><div class="price"><span class="original-price">Rp 23.000</span><span>Rp 19.000</span></div><p class="bonus">Bonus: 10 Diamond</p><button class="order-btn" onclick="openOrderModal('77 Diamond', 19000)"><i class="fab fa-whatsapp"></i> ORDER HOT</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">100 DIAMOND</h3><div class="price"><span class="original-price">Rp 29.000</span><span>Rp 24.000</span></div><p class="bonus">Bonus: 12 Diamond</p><button class="order-btn" onclick="openOrderModal('100 Diamond', 24000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">210 DIAMOND</h3><div class="price"><span class="original-price">Rp 58.000</span><span>Rp 48.000</span></div><p class="bonus">Bonus: 25 Diamond</p><button class="order-btn" onclick="openOrderModal('210 Diamond', 48000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in popular"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">285 DIAMOND</h3><div class="price"><span class="original-price">Rp 78.000</span><span>Rp 65.000</span></div><p class="bonus">Bonus: 35 Diamond</p><button class="order-btn" onclick="openOrderModal('285 Diamond', 65000)"><i class="fab fa-whatsapp"></i> ORDER POPULAR</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">370 DIAMOND</h3><div class="price"><span class="original-price">Rp 98.000</span><span>Rp 82.000</span></div><p class="bonus">Bonus: 45 Diamond</p><button class="order-btn" onclick="openOrderModal('370 Diamond', 82000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">500 DIAMOND</h3><div class="price"><span class="original-price">Rp 145.000</span><span>Rp 125.000</span></div><p class="bonus">Bonus: 60 Diamond</p><button class="order-btn" onclick="openOrderModal('500 Diamond', 125000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in hot"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">720 DIAMOND</h3><div class="price"><span class="original-price">Rp 198.000</span><span>Rp 168.000</span></div><p class="bonus">Bonus: 80 Diamond</p><button class="order-btn" onclick="openOrderModal('720 Diamond', 168000)"><i class="fab fa-whatsapp"></i> ORDER HOT</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">1000 DIAMOND</h3><div class="price"><span class="original-price">Rp 290.000</span><span>Rp 245.000</span></div><p class="bonus">Bonus: 120 Diamond</p><button class="order-btn" onclick="openOrderModal('1000 Diamond', 245000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in"><div class="diamond-icon"><i class="fas fa-gem"></i></div><h3 class="product-title">2010 DIAMOND</h3><div class="price"><span class="original-price">Rp 580.000</span><span>Rp 490.000</span></div><p class="bonus">Bonus: 250 Diamond</p><button class="order-btn" onclick="openOrderModal('2010 Diamond', 490000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
             </div>
         </div>
 
-        <!-- MEMBERSHIP PRODUCTS -->
         <div id="membership-category" class="category-content">
             <div class="products">
-                <!-- STARLIGHT -->
-                <div class="product-card fade-in">
-                    <div class="starlight-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3 class="product-title">STARLIGHT</h3>
-                    <div class="price">
-                        <span>Rp 48.000</span>
-                    </div>
-                    <p class="bonus">+ 300 Diamond + Skin Starlight</p>
-                    <button class="order-btn" onclick="openOrderModal('Starlight', 48000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in popular">
-                    <div class="starlight-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3 class="product-title">STARLIGHT PLUS</h3>
-                    <div class="price">
-                        <span>Rp 68.000</span>
-                    </div>
-                    <p class="bonus">+ 500 Diamond + Skin Starlight Plus</p>
-                    <button class="order-btn" onclick="openOrderModal('Starlight Plus', 68000)">
-                        <i class="fab fa-whatsapp"></i> ORDER POPULAR
-                    </button>
-                </div>
-
-                <!-- TWILIGHT PASS -->
-                <div class="product-card fade-in">
-                    <div class="twilight-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3 class="product-title">TWILIGHT PASS</h3>
-                    <div class="price">
-                        <span>Rp 65.000</span>
-                    </div>
-                    <p class="bonus">+ 500 Diamond + Skin Twilight</p>
-                    <button class="order-btn" onclick="openOrderModal('Twilight Pass', 65000)">
-                        <i class="fab fa-whatsapp"></i> ORDER
-                    </button>
-                </div>
-
-                <div class="product-card fade-in hot">
-                    <div class="twilight-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3 class="product-title">TWILIGHT PASS PLUS</h3>
-                    <div class="price">
-                        <span>Rp 85.000</span>
-                    </div>
-                    <p class="bonus">+ 700 Diamond + Skin Twilight Elite</p>
-                    <button class="order-btn" onclick="openOrderModal('Twilight Pass Plus', 85000)">
-                        <i class="fab fa-whatsapp"></i> ORDER HOT
-                    </button>
-                </div>
+                <div class="product-card fade-in"><div class="starlight-icon"><i class="fas fa-crown"></i></div><h3 class="product-title">STARLIGHT</h3><div class="price"><span>Rp 48.000</span></div><p class="bonus">+ 300 Diamond + Skin Starlight</p><button class="order-btn" onclick="openOrderModal('Starlight', 48000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in popular"><div class="starlight-icon"><i class="fas fa-crown"></i></div><h3 class="product-title">STARLIGHT PLUS</h3><div class="price"><span>Rp 68.000</span></div><p class="bonus">+ 500 Diamond + Skin Starlight Plus</p><button class="order-btn" onclick="openOrderModal('Starlight Plus', 68000)"><i class="fab fa-whatsapp"></i> ORDER POPULAR</button></div>
+                <div class="product-card fade-in"><div class="twilight-icon"><i class="fas fa-moon"></i></div><h3 class="product-title">TWILIGHT PASS</h3><div class="price"><span>Rp 65.000</span></div><p class="bonus">+ 500 Diamond + Skin Twilight</p><button class="order-btn" onclick="openOrderModal('Twilight Pass', 65000)"><i class="fab fa-whatsapp"></i> ORDER</button></div>
+                <div class="product-card fade-in hot"><div class="twilight-icon"><i class="fas fa-moon"></i></div><h3 class="product-title">TWILIGHT PASS PLUS</h3><div class="price"><span>Rp 85.000</span></div><p class="bonus">+ 700 Diamond + Skin Twilight Elite</p><button class="order-btn" onclick="openOrderModal('Twilight Pass Plus', 85000)"><i class="fab fa-whatsapp"></i> ORDER HOT</button></div>
             </div>
         </div>
     </section>
 
-    <!-- HOW TO ORDER -->
     <section id="howto" class="container">
         <h2 class="section-title">CARA ORDER MUDAH</h2>
         <div class="steps">
-            <div class="step fade-in">
-                <div class="step-number">1</div>
-                <i class="fas fa-shopping-cart"></i>
-                <h3>PILIH DIAMOND</h3>
-                <p>Pilih paket diamond yang diinginkan</p>
-            </div>
-            <div class="step fade-in">
-                <div class="step-number">2</div>
-                <i class="fas fa-credit-card"></i>
-                <h3>BAYAR</h3>
-                <p>Transfer ke rekening yang tersedia</p>
-            </div>
-            <div class="step fade-in">
-                <div class="step-number">3</div>
-                <i class="fas fa-id-card"></i>
-                <h3>KIRIM DATA</h3>
-                <p>Kirim ID ML & bukti TF via WhatsApp</p>
-            </div>
-            <div class="step fade-in">
-                <div class="step-number">4</div>
-                <i class="fas fa-check-circle"></i>
-                <h3>DIAMOND MASUK</h3>
-                <p>Diamond masuk dalam 1-5 menit</p>
-            </div>
+            <div class="step"><div class="step-number">1</div><i class="fas fa-shopping-cart"></i><h3>PILIH DIAMOND</h3><p>Pilih paket diamond yang diinginkan</p></div>
+            <div class="step"><div class="step-number">2</div><i class="fas fa-credit-card"></i><h3>PILIH BAYAR</h3><p>Pilih metode pembayaran</p></div>
+            <div class="step"><div class="step-number">3</div><i class="fas fa-university"></i><h3>TRANSFER</h3><p>Transfer ke rekening yang tampil</p></div>
+            <div class="step"><div class="step-number">4</div><i class="fas fa-paper-plane"></i><h3>KIRIM BUKTI</h3><p>Kirim bukti & ID ke WhatsApp</p></div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
     <section id="faq" class="container">
         <h2 class="section-title">PERTANYAAN UMUM</h2>
         <div class="faq-container">
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Berapa lama proses top up?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Proses 1-5 menit setelah pembayaran dikonfirmasi. Maksimal 15 menit jika banyak order.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Apakah aman?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>100% aman. Kami menggunakan metode resmi. Garansi uang kembali jika diamond tidak masuk.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Metode pembayaran apa saja?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>BCA, BRI, BNI, Mandiri, DANA, OVO, GoPay, ShopeePay, QRIS, Alfamart, Indomaret.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Buka jam berapa?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Buka 24 jam / 7 hari. Customer service siap membantu kapan saja.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Bagaimana cara order?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>1. Pilih diamond 2. Klik ORDER 3. Isi ID ML 4. Bayar 5. Kirim bukti TF via WhatsApp 6. Diamond masuk</p>
-                </div>
-            </div>
-            
-            <div class="faq-item fade-in">
-                <div class="faq-question">
-                    <h3>Diamond tidak masuk, bagaimana?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Segera hubungi CS via WhatsApp. Kami akan proses refund atau kirim ulang dalam 30 menit.</p>
-                </div>
-            </div>
+            <div class="faq-item"><div class="faq-question"><h3>Berapa lama proses top up?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Proses 1-5 menit setelah pembayaran dikonfirmasi.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><h3>Apakah aman?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>100% aman. Garansi uang kembali jika diamond tidak masuk.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><h3>Metode pembayaran apa saja?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>BRI • BNI • DANA • OVO • GoPay • ShopeePay</p></div></div>
+            <div class="faq-item"><div class="faq-question"><h3>Buka jam berapa?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Buka 24 jam / 7 hari</p></div></div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MONTOONSHOP</h3>
+                    <h3>MOONTOONSHOP</h3>
                     <p>Top Up Diamond Mobile Legends termurah dan tercepat. Proses 1-5 menit setelah pembayaran. Garansi 100% aman.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>KONTAK KAMI</h3>
-                    <div class="contact-info">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+62 882-0064-28491</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>cs@montoonshop.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i>
-                        <span>Buka 24 Jam / 7 Hari</span>
-                    </div>
+                    <div class="contact-info"><i class="fab fa-whatsapp"></i><span>+62 882-0064-28491</span></div>
+                    <div class="contact-info"><i class="fas fa-envelope"></i><span>moontonshop@gmail.com</span></div>
+                    <div class="contact-info"><i class="fas fa-clock"></i><span>Buka 24 Jam / 7 Hari</span></div>
                 </div>
                 <div class="footer-section">
                     <h3>METODE PEMBAYARAN</h3>
-                    <p>BCA • BRI • BNI • Mandiri • DANA • OVO • GoPay • ShopeePay • QRIS • Alfamart • Indomaret</p>
+                    <p>BRI • BNI • DANA • OVO • GoPay • ShopeePay</p>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2024 MONTOONSHOP. All rights reserved.</p>
-            </div>
+            <div class="copyright"><p>&copy; 2024 MOONTOONSHOP. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- ORDER MODAL -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeOrderModal()">&times;</button>
-            <h2 style="color: var(--primary); margin-bottom: 20px;">ORDER DIAMOND</h2>
+            <h2 style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-shopping-cart"></i> ORDER DIAMOND</h2>
             
             <div class="form-group">
                 <label>Paket Diamond:</label>
-                <input type="text" id="modalProduct" readonly>
+                <input type="text" id="modalProduct" readonly style="background: #2a2a4a;">
             </div>
             
             <div class="form-group">
                 <label>Harga:</label>
-                <input type="text" id="modalPrice" readonly>
+                <input type="text" id="modalPrice" readonly style="background: #2a2a4a;">
             </div>
             
             <div class="form-group">
-                <label for="playerId">ID Mobile Legends:</label>
+                <label>ID Mobile Legends:</label>
                 <input type="text" id="playerId" placeholder="Contoh: 123456789" required>
             </div>
             
             <div class="form-group">
-                <label for="paymentMethod">Metode Pembayaran:</label>
-                <select id="paymentMethod">
-                    <option value="BCA">BCA</option>
-                    <option value="BRI">BRI</option>
-                    <option value="BNI">BNI</option>
-                    <option value="Mandiri">Mandiri</option>
-                    <option value="DANA">DANA</option>
-                    <option value="OVO">OVO</option>
-                    <option value="GoPay">GoPay</option>
-                    <option value="QRIS">QRIS</option>
-                </select>
+                <label>Pilih Metode Pembayaran:</label>
+                <div class="payment-methods" id="paymentMethodsList">
+                    <div class="payment-method" data-bank="BRI" data-number="384001011925505" data-name="Chovy Fasya Syarafina">
+                        <i class="fas fa-university"></i> BRI
+                    </div>
+                    <div class="payment-method" data-bank="BNI" data-number="1435802899" data-name="Mustika Ayu Maharani">
+                        <i class="fas fa-university"></i> BNI
+                    </div>
+                    <div class="payment-method" data-bank="DANA" data-number="082131643175" data-name="Mustika Ayu Maharani">
+                        <i class="fas fa-wallet"></i> DANA
+                    </div>
+                    <div class="payment-method" data-bank="OVO" data-number="0882006428491" data-name="Chovy Fasya Syarafina">
+                        <i class="fas fa-wallet"></i> OVO
+                    </div>
+                    <div class="payment-method" data-bank="GoPay" data-number="0882006428491" data-name="Chovy Fasya Syarafina">
+                        <i class="fas fa-wallet"></i> GoPay
+                    </div>
+                    <div class="payment-method" data-bank="ShopeePay" data-number="0882006428491" data-name="Chovy Fasya Syarafina">
+                        <i class="fas fa-wallet"></i> ShopeePay
+                    </div>
+                </div>
             </div>
             
-            <a id="whatsappLink" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> KIRIM VIA WHATSAPP
-            </a>
+            <div id="rekeningInfo" style="display: none;">
+                <div class="rekening-info">
+                    <i class="fas fa-university" style="font-size: 30px;"></i>
+                    <div id="bankName" style="font-weight: bold; margin-top: 5px;"></div>
+                    <div class="rekening-number" id="rekNumber"></div>
+                    <div id="rekName"></div>
+                    <button class="copy-btn" onclick="copyRekening()"><i class="fas fa-copy"></i> Copy Nomor</button>
+                </div>
+            </div>
             
-            <p style="margin-top: 15px; font-size: 14px; color: #aaa;">
-                <i class="fas fa-info-circle"></i> Diamond akan masuk dalam 1-5 menit setelah pembayaran
-            </p>
-            <p style="margin-top: 10px; font-size: 12px; color: #FFD700;">
-                <i class="fas fa-exclamation-circle"></i> Jangan lupa kirim bukti transfer di WhatsApp!
+            <button id="orderWhatsappBtn" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> KIRIM PESANAN VIA WHATSAPP
+            </button>
+            
+            <p style="margin-top: 15px; font-size: 12px; color: #aaa; text-align: center;">
+                <i class="fas fa-info-circle"></i> Setelah transfer, kirim bukti transfer ke WhatsApp
             </p>
         </div>
     </div>
 
     <script>
-        // WhatsApp Configuration
-        const whatsappNumber = "62882006428491"; // NOMOR SUDAH DIGANTI
+        const whatsappNumber = "62882006428491";
+        let currentProduct = "";
+        let currentPrice = 0;
+        let selectedPayment = null;
         
-        // Modal Functions
         function openOrderModal(product, price) {
-            const modal = document.getElementById('orderModal');
-            const modalProduct = document.getElementById('modalProduct');
-            const modalPrice = document.getElementById('modalPrice');
-            
-            modalProduct.value = product;
-            modalPrice.value = 'Rp ' + price.toLocaleString('id-ID');
-            
-            modal.style.display = 'flex';
+            currentProduct = product;
+            currentPrice = price;
+            document.getElementById('modalProduct').value = product;
+            document.getElementById('modalPrice').value = 'Rp ' + price.toLocaleString('id-ID');
+            document.getElementById('rekeningInfo').style.display = 'none';
+            selectedPayment = null;
+            document.getElementById('playerId').value = '';
+            document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+            document.getElementById('orderModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
         
         function closeOrderModal() {
-            const modal = document.getElementById('orderModal');
-            modal.style.display = 'none';
+            document.getElementById('orderModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
         
-        // Category Tabs Function
         function showCategory(category) {
-            // Update active tab
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
-            
-            // Show selected category
-            document.querySelectorAll('.category-content').forEach(content => {
-                content.classList.remove('active');
-            });
+            document.querySelectorAll('.category-content').forEach(content => content.classList.remove('active'));
             document.getElementById(category + '-category').classList.add('active');
         }
         
-        // Update WhatsApp link dynamically (TANPA EMOJI)
-        function updateWhatsAppLink() {
-            const product = document.getElementById('modalProduct').value;
-            const price = document.getElementById('modalPrice').value;
-            const playerId = document.getElementById('playerId').value;
-            const paymentMethod = document.getElementById('paymentMethod').value;
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                const bank = this.dataset.bank;
+                const number = this.dataset.number;
+                const name = this.dataset.name;
+                
+                selectedPayment = { bank, number, name };
+                
+                document.getElementById('bankName').innerHTML = bank;
+                document.getElementById('rekNumber').innerHTML = number;
+                document.getElementById('rekName').innerHTML = 'a/n ' + name;
+                document.getElementById('rekeningInfo').style.display = 'block';
+            });
+        });
+        
+        function copyRekening() {
+            const rekNumber = document.getElementById('rekNumber').innerText;
+            navigator.clipboard.writeText(rekNumber);
+            alert('Nomor rekening berhasil disalin!');
+        }
+        
+        document.getElementById('orderWhatsappBtn').addEventListener('click', function() {
+            if (!selectedPayment) {
+                alert('Pilih metode pembayaran terlebih dahulu!');
+                return;
+            }
             
-            // TANPA EMOJI, TANPA SERVER, ADA MINTA BUKTI TF
-            const message = `Halo admin, saya mau order diamond MLBB\n\n` +
-                           `Produk: ${product}\n` +
-                           `Harga: ${price}\n` +
-                           `ID ML: ${playerId}\n` +
-                           `Bayar via: ${paymentMethod}\n\n` +
-                           `SUDAH TRANSFER, mohon segera diproses.\n` +
+            const playerId = document.getElementById('playerId').value;
+            if (!playerId) {
+                alert('Masukkan ID Mobile Legends!');
+                return;
+            }
+            
+            const message = `Halo admin, saya mau order diamond MLBB%0A%0A` +
+                           `Produk: ${currentProduct}%0A` +
+                           `Harga: Rp ${currentPrice.toLocaleString('id-ID')}%0A` +
+                           `ID ML: ${playerId}%0A` +
+                           `Bayar via: ${selectedPayment.bank}%0A` +
+                           `Nomor: ${selectedPayment.number}%0A` +
+                           `a/n: ${selectedPayment.name}%0A%0A` +
+                           `SUDAH TRANSFER, mohon segera diproses.%0A` +
                            `Bukti TF akan saya kirim di chat ini.`;
             
-            const whatsappLink = document.getElementById('whatsappLink');
-            whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-        }
+            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(url, '_blank');
+        });
         
-        // Add event listeners to form inputs
-        document.getElementById('playerId').addEventListener('input', updateWhatsAppLink);
-        document.getElementById('paymentMethod').addEventListener('change', updateWhatsAppLink);
-        
-        // Initial update
-        updateWhatsAppLink();
-        
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('orderModal');
-            if (event.target === modal) {
-                closeOrderModal();
-            }
+            if (event.target === modal) closeOrderModal();
         }
         
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
         
-        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
+                question.parentElement.classList.toggle('active');
             });
         });
-        
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements
-        document.querySelectorAll('.product-card, .step, .faq-item').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Simple visitor counter
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount = parseInt(visitorCount) + 1;
-        localStorage.setItem('visitorCount', visitorCount);
-        
-        console.log(`Website telah dikunjungi ${visitorCount} kali`);
     </script>
 </body>
 </html>
